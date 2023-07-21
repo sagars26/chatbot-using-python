@@ -25,4 +25,9 @@ for intent in intro['intro']:
             classes.append(intent['tag'])
 
 words=[lemma.lemmatize(word) for word in words if word not in ignorel]
- 
+words= word.sorted(set(classes))
+
+classes=sorted(set(classes))
+
+pickle.dump(words,open(words.pk1,'wb'))
+pickle.dump(classes,open(classes.pk1,'wb'))
